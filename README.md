@@ -48,3 +48,22 @@ Login with your custom credentials or use the default: ID: `Admin`, Password: `A
 
 ![monitor](img/stats.png)
 
+## Step 7 - Play the game! :D 
+
+Reach your client and proxy using the following address:
+
+```
+<Client NodeIP>:8080/?server=10.30.100.100&proxy=<Proxy NodeIP>:9090&nick=<Nickname>
+```
+
+Replace the following:
+
+- `<Client NodeIP>`: IP address of the node hosting the client. Available in the client service details (check step 6)
+- `<Proxy NodeIP>`: IP address of the node hosting the proxy. Available in the proxy service details (check step 6)
+- `<Nickname>`: Nickname of your choice. Be creative and have fun 🤩`
+
+For example, in our deployment the resulting link is be: `172.20.0.1:8080/?server=10.30.100.100&proxy=172.20.0.1:9090&nick=HelloWorld`
+
+
+
+
