@@ -48,7 +48,7 @@ Login with your custom credentials or use the default: ID: `Admin`, Password: `A
 
 ![monitor](img/stats.png)
 
-## Step 7 - Play the game! :D 
+## Step 7 - 🎮 Play the game! 
 
 Reach your client and proxy using the following address:
 
