@@ -3,7 +3,7 @@
 ![](img/minecraft-full.png)
 
 With this tutorial we'll be able to:
-- 🎮 Play Minecraft from a browser, no client installation needed (thanks to [WebMC](https://github.com/michaljaz/webmc))
+- 🎮 Play Minecraft from a browser, no client installation needed (thanks to [Zardoy](https://github.com/giobart/minecraft-web-client/tree/next)'s Prismarine based modified web client)
 - 👭 Play multiplayer locally or remotely 
 - 🖥️ Host your Minecraft server ([Openhack](https://github.com/noelbundick/minecraft-server)) and proxy. 
 - ⚙️ Scale your server instances to handle more users
@@ -21,7 +21,7 @@ This tutorial is not meant as a way to hack the game or play for without a licen
 
 Get Oakestra up and running with at least one cluster and one worker node. 
 
-Check out the official [Wiki](https://www.oakestra.io/docs/getstarted/get-started-cluster/)
+Check out the official [Wiki](https://www.oakestra.io/docs/getting-started/welcome-to-oakestra-docs/)
 
 ## Step 2 - 🖼️ Access the Dashboard 
 
@@ -46,24 +46,34 @@ Login with your custom credentials or use the default: ID: `Admin`, Password: `A
 
 ## Step 6 - 🖥️ Monitor your deplyment
 
-![monitor](img/stats.png)
+Find the IP address of the client from the service details of the oakestra dashbaord:
 
-## Step 7 - 🎮 Play the game! 
+![monitor](img/ip-page.png)
 
-Reach your client and proxy using the following address:
+## Step 7 - 💻 Reach your client! 
 
+Then reach your client node IP address at port 8080.
 ```
-<Client NodeIP>:8080/?server=10.30.100.100&proxy=<Proxy NodeIP>:9090&nick=<Nickname>
+http://<Client NodeIP>:8080
 ```
 
-Replace the following:
+![monitor](img/menu.png)
 
-- `<Client NodeIP>`: IP address of the node hosting the client. Available in the client service details (check step 6)
-- `<Proxy NodeIP>`: IP address of the node hosting the proxy. Available in the proxy service details (check step 6)
-- `<Nickname>`: Nickname of your choice. Be creative and have fun 🤩`
+## Step 8 - ⚙️ Setup the server proxy! 
 
-For example, in our deployment the resulting link is be: `172.20.0.1:8080/?server=10.30.100.100&proxy=172.20.0.1:9090&nick=HelloWorld`
+Find the IP address of the proxy service from the service details of the oakestra dashbaord. Then in the server selection menu of the minecraft client, click "EDIT" on the pre-existing server and change the IP address to the proxy service IP address.
 
+![monitor](img/edit-page.png)
+
+![monitor](img/proxy-ip-page.png)
+
+Replace only the IP address of the proxy. The server IP is a LoadBalancer Semantic IP of Oakestra. The Proxy will load balance the traffic across all the instances of the servers available.
+
+## Step 9 - 🎮 Enjoy the game!
+
+Save the server configuration, click the server and enjoy! 
+
+![monitor](img/oak-gif.gif)
 
 
 
